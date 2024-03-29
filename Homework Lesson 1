@@ -1,0 +1,42 @@
+//TASK 0:
+//Объявите переменную, в которой будете хранить значение скорости в километрах в час, а затем переведите это значение в мили в секунду. Выведете в консоль сообщение: "'x' km per hour  it is 'y' miles per second", заменив x и y вашими значениями.
+
+var speed: Double = 60
+var speedMiles = 0.621371
+
+speedMiles = Double(speed) * speedMiles
+speedMiles = speedMiles / 60.0 / 60.0
+
+print("\(speed) km per hour it is \(speedMiles) miles per second")
+
+
+//TASK 1:
+//Напишите код, который будет вычислять сколько денег находится в копилке. Определим, что возможны монеты номиналом 1 доллар, 50, 25, 10, 5 и 1 цент и мы знаем сколько монет каждого номинала у нас есть. Выведете в консоль сообщение: "There are 10.33$ in the piggy bank". Разумеется, сумма должна соответствовать вашим данным.
+
+let oneDollar = 1
+let fiftyCent = 1
+let twentyFiveCent = 1
+let tenCent = 1
+let fiveCent = 1
+let oneCent = 1
+
+let sum = Double(fiftyCent) * 0.50 + Double(twentyFiveCent) * 0.25
+        + Double(tenCent) * 0.10 + Double(fiveCent) * 0.05
+        + Double(oneCent) * 0.01
+let sumResult = sum + Double(oneDollar)
+print("There are \(sumResult)$ in the piggy bank")
+
+
+//Task 2:
+//Напишите код, который выведет в консоль ответ на вопрос делиться ли одно целое число на другое без остатка, а если нет, то найдите остаток от деления. Разрешено использовать только операторы деления и сравнения. Результат выведите в консоль в виде: "'x' is divisible by 'y' without remainder" или "'x' is not divisible by 'y' without remainder. Remains: 'z'".
+
+let firstNumber = 6
+let secondNumber = 4
+
+let result = firstNumber - firstNumber / secondNumber * secondNumber
+    if result == 0 {
+        print("\(firstNumber) is divisible by \(secondNumber) without remainder")
+    } else {
+        print("\(firstNumber) is not divisible by \(secondNumber) without remainder. Remains: \(result)")
+    }
+
