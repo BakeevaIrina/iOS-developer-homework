@@ -1,0 +1,68 @@
+import Foundation
+
+/*
+ TASK 0:
+ Объявите кортеж для хранения значений веса и роста. Рассчитайте индекс массы тела для ваших значений (формула: вес/рост^2).
+ */
+let imt = (width: 54, height: 16.5)
+let imtResult: Int = Int((imt.width / Int((imt.height * imt.height))) * 100)
+
+/*
+ TASK 1:
+ Убедитесь, что индекс массы тела валиден. Если ваше значение окажется вне диапазона от 10 до 100 или вы получите иные проблемы с ним - выведете в консоль сообщение "Invalid data" и прервите выполнение кода
+ */
+
+/*
+ TASK 2:
+ Когда вы проверили, что ваш индекс находиться в допустимом диапазоне выведите в консоль сообщение:
+ "Underweight" если индекс меньше или равен 18
+ "Normal" если индекс меньше или равен 25
+ "Overweight" если индекс меньше или равен 30
+ "Obese" если индекс больше 30
+ */
+
+switch imtResult {
+case 10...18: print("Underweight")
+case 18...25: print("Normal")
+case 25...30: print("Overweight")
+case 30...100: print("Obese")
+default:
+    print("Invalid data")// Task 1
+}
+/*
+ TASK 3:
+ Опираясь на полученные знания и используя ваш кортеж выведите в консоль описание человека с веденными значениями. Возьмем по умолчанию следующие значения роста:
+ "below average height" при росте ниже 170
+ "average height" при росте от 170 - 185
+ "above average height" при росте выше 185
+
+ и веса:
+
+ "below average weight" при весе ниже 60
+ "average weight" при весе от 60 - 90
+ "above average weight" при весе выше 90
+
+ В итоге у вас должно получиться строка вроде: "A person with a height of 166 and a weight of 83 has an below average height and an average weight"
+ */
+switch imt {
+case (let width, 0...17.0):
+    print("below average height")
+case (let width, 17.0...18.5):
+    print("average height")
+case (let width, 18.5...):
+    print("above average height")
+default:
+    print("went wrong")
+}
+
+switch imt {
+case (let height, ...60):
+    print("below average weight")
+case (let height, 60...90):
+    print("average weight")
+case (let height, 90...):
+    print("above average weight")
+default:
+    print("went wrong")
+}
+
